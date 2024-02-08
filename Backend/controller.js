@@ -1,4 +1,3 @@
-const { error } = require("console");
 const pool = require("./db");
 const queries = require("./queries");
 
