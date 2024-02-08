@@ -1,3 +1,4 @@
+const { error } = require("console");
 const pool = require("./db");
 const queries = require("./queries");
 
@@ -28,6 +29,18 @@ const isPass = async (data) => {
 	} catch (error) {
 		throw error;
 	}
+};
+
+const add = async (data) => {
+	const { name, username, password, hostel } = data;
+	pool.query(
+		queries.addUser,
+		[name, username, password, hostel],
+		(error, result) => {
+			if (error) throw error;
+			res.status(201).send("user created");
+		}
+	);
 };
 
 module.exports = {
