@@ -46,4 +46,5 @@ const add = async (data) => {
 module.exports = {
 	isUser,
 	isPass,
+    add,
 };
