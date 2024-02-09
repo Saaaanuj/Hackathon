@@ -59,11 +59,17 @@ app.post("/changemessmenu",function(req,res){
     if(auth.isUser(data))
     {
         change_requests++;
+        console.log(change_requests);
         if(change_requests==change_requests_limit)
         {
-            SendMenuRequest();
             change_requests = 0;
+            SendMenuRequest();
         }
+        res.json({"msg":"Not a user"});
+    }
+    else
+    {
+        res.json({"msg":"Not a user"});
     }
 })
 
