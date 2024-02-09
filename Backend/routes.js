@@ -50,8 +50,12 @@ app.post('/eatfood',function(req,res){
         "username": req.body.username,
         "eatfood": req.body.eatfood  
     }
-    SendData(data);
-    res.json({'msg':'succesful'});
+    if(auth.isUser(data))
+    {
+        SendData(data);
+        res.json({'msg':'succesful'});    
+    }
+    res.json({'msg':'Not a User'});
 })
 
 app.post("/changemessmenu",function(req,res){
@@ -65,7 +69,7 @@ app.post("/changemessmenu",function(req,res){
             change_requests = 0;
             SendMenuRequest();
         }
-        res.json({"msg":"Not a user"});
+        res.json({"msg":"Done"});
     }
     else
     {
