@@ -51,7 +51,7 @@ app.post('/eatfood',function(req,res){
     res.json({'msg':'succesful'});
 })
 
-app.post("/messmenu",function(req,res){
+app.post("/changemessmenu",function(req,res){
     data = {"username":req.body.username};
     if(auth.isUser(data))
     {
