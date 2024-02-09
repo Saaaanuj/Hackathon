@@ -7,6 +7,9 @@ const change_requests_limit = 50;
 change_requests = 0;
 app.use(express.json());
 
+//isPass =checks if both username and password exist,isUser=checks username exist
+//returns true false
+
 
 app.post('/signup',function(req,res){
     data = {
