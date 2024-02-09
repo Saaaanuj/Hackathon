@@ -5,6 +5,9 @@ const PORT = 3001;
 const app = express();
 app.use(express.json());
 
+//isPass =checks if both username and password exist,isUser=checks username exist
+//returns true false
+
 
 app.post('/signup',function(req,res){
     data = {
